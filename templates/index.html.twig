@@ -1,20 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PhotoEditorController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<div id="mainBlock" class="container-fluid">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'D:/vhost/photoEditor/src/Controller/PhotoEditorController.php'|file_link(0) }}">src/Controller/PhotoEditorController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'D:/vhost/photoEditor/templates/photo_editor/index.html.twig'|file_link(0) }}">templates/photo_editor/index.html.twig</a></code></li>
-    </ul>
+    <div class="p-5 row">
+
+        <div class="col-12 col-sm-3 tool-panel">
+            <h2>Tool panel</h2>
+        </div>
+        
+        <div class="col-12 col-sm-9 image-panel">
+            <div>
+                <h2>Import your image (.png, .jpg)</h2>
+                <input class="form-control form-control-lg" id="imageField" type="file" accept=".png,.jpg">
+            </div>
+        </div>
+
+    </div>
+
 </div>
+
+
 {% endblock %}
