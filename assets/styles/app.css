@@ -6,4 +6,11 @@
 .image-panel{
     background-color: rgb(241, 207, 163);
     min-height: 700px;
+    text-align: center;
+}
+.bi-image{
+    font-size: 500%;
+}
+.import-block{
+    border: 3px dashed white;
 }
