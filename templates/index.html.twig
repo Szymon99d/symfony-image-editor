@@ -3,19 +3,28 @@
 
 {% block body %}
 
-<div id="mainBlock" class="container-fluid">
+<div id="mainBlock" class="container-fluid w-100 h-100">
 
-    <div class="p-5 row">
+    <div class="h-100 row">
 
         <div class="col-12 col-sm-3 tool-panel">
             <h2>Tool panel</h2>
         </div>
         
-        <div class="col-12 col-sm-9 image-panel d-flex justify-content-center align-items-center">
-            <div class="h-75 w-75 p-2 import-block d-flex justify-content-center align-items-center flex-column">
+        <div class="col-12 col-sm-9 p-2 image-panel d-flex justify-content-center align-items-center">
+            <div class="h-100 w-75 p-2 import-block d-flex justify-content-center align-items-center flex-column">
+                <img id="img"/>
+                <div id="imgIcon" class="container"><i class="bi bi-image"></i></div>
                 <div class="container"><h1>Import your image (.png, .jpg)</h1></div>
-                <div class="container"><i class="bi bi-image"></i></div>
-                <div class="container"><input class="form-control form-control-lg" id="imageField" type="file" accept=".png,.jpg,.jpeg"></div>
+                <div id="resolutionError" class="alert alert-danger hide-msg">
+                    <i class="bi bi-exclamation-lg"></i>Your image resolution is too high! Max 1000x1000
+                    <button id="hideMsgBtn" class="btn btn-danger"><i class="bi bi-x-lg"></i></button>
+                </div>
+                <div class="container">
+                <form id="imgUploadForm" name="uploadForm" method="POST" action="">
+                    <input class="form-control form-control-lg" id="imageField" name="uploadImg" type="file" accept=".png,.jpg,.jpeg">
+                </form>
+                </div>
             </div>
         </div>
 

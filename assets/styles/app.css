@@ -1,11 +1,15 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+html, body{
+    height: 100%;
+    margin: auto;
+}
 .tool-panel{
     background-color: rgb(184, 153, 113);
-    min-height: 700px;
+    min-height: 75%;
 }
 .image-panel{
     background-color: rgb(241, 207, 163);
-    min-height: 700px;
+    min-height: 75%;
     text-align: center;
 }
 .bi-image{
@@ -13,4 +17,10 @@
 }
 .import-block{
     border: 3px dashed white;
+}
+.show-msg{
+    display: block;
+}
+.hide-msg{
+    display: none;
 }
