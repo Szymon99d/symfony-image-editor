@@ -79,3 +79,19 @@ $('input[type=range]').on('input', function () {
     setFilters();
 
 });
+
+//Reset filters values
+$("#resetFilters").on('click',function(){
+    filtersValues = [1,0,0,0,1];
+    //clear canvas
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    setFilters();
+})
+
+
+$("#download").on("click",function(){
+    if(img.src!=""){
+        this.href = canvas.toDataURL();
+        this.download = "imgExport.png";
+    }
+})
