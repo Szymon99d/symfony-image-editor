@@ -8,23 +8,50 @@
     <div class="h-100 row">
 
         <div class="col-12 col-sm-3 tool-panel">
-            <h2>Tool panel</h2>
+            <h1>Tool panel</h1>
+            
+                <button class="btn btn-primary btn-lg w-100" data-bs-toggle="collapse" href="#filters" role="button" aria-expanded="false" aria-controls="filters">
+                    Filters
+                </button>
+                <div class="collapse" id="filters">
+                    <h4 for="contrast" class="form-label">Contrast</h4>
+                    <input type="range" class="form-range" min="0" max="10" step="0.1" value="1" id="contrast">
+                    <br>
+                    <h4 for="sepia" class="form-label">Sepia</h4>
+                    <input type="range" class="form-range" min="0" max="1" step="0.1" value="0" id="sepia">
+                    <br>
+                    <h4 for="grayscale" class="form-label">Grayscale</h4>
+                    <input type="range" class="form-range" min="0" max="1" step="0.1" value="0" id="grayscale">
+                    <br>
+                    <h4 for="blur" class="form-label">Blur</h4>
+                    <input type="range" class="form-range" min="0" max="10" step="1"  value="0" id="blur">
+                    <br>
+                    <h4 for="brightness" class="form-label">Brightness</h4>
+                    <input type="range" class="form-range" min="0" max="5" step="0.1" value="1" id="brightness"> 
+                    <br>
+                    <input id="resetFilters" class="btn btn-danger w-50" type="reset" value="Reset"/>
+                </div>
+
+
         </div>
         
         <div class="col-12 col-sm-9 p-2 image-panel d-flex justify-content-center align-items-center">
             <div class="h-100 w-75 p-2 import-block d-flex justify-content-center align-items-center flex-column">
-                <img id="img"/>
-                <div id="imgIcon" class="container"><i class="bi bi-image"></i></div>
-                <div class="container"><h1>Import your image (.png, .jpg)</h1></div>
+                <canvas id="image"></canvas>
+                
+                <i id="imgIcon" class="bi bi-image"></i>
+                <h1>Import your image (.png, .jpg)</h1>
+                
                 <div id="resolutionError" class="alert alert-danger hide-msg">
-                    <i class="bi bi-exclamation-lg"></i>Your image resolution is too high! Max 1000x1000
+                    <i class="bi bi-exclamation-lg"></i>Your image resolution is too high or your image has invalid extension!
                     <button id="hideMsgBtn" class="btn btn-danger"><i class="bi bi-x-lg"></i></button>
                 </div>
-                <div class="container">
-                <form id="imgUploadForm" name="uploadForm" method="POST" action="">
+                
+                <form id="imgUploadForm" method="POST" action="">
                     <input class="form-control form-control-lg" id="imageField" name="uploadImg" type="file" accept=".png,.jpg,.jpeg">
                 </form>
-                </div>
+                
+                <a id="download" class="btn btn-lg btn-success">Export image</a>
             </div>
         </div>
 
