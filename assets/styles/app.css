@@ -6,6 +6,7 @@ html, body{
 .tool-panel{
     background-color: rgb(184, 153, 113);
     min-height: 75%;
+    text-align: center;
 }
 .image-panel{
     background-color: rgb(241, 207, 163);
